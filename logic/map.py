@@ -1,7 +1,6 @@
 import random
 
 class Map:
-<<<<<<< HEAD
     DIRTY_FLOOR_CHANCE = 30  # %
 
     def __init__(self, cols, rows, rows_padding=0, cols_padding=0):
@@ -31,7 +30,6 @@ class Map:
             for c in range(self.cols):
                 print(self.map_instance[r][c], end=" ")
             print()
-=======
     DIRTY_FLOOR_CHANCE = 30  # IN PERCENTAGE
 
     def __init__(self, cols, rows, rows_padding, cols_padding):
@@ -61,4 +59,3 @@ class Map:
             for j in range(self.cols):
                 print(self.map_instance[i][j], end=" ")
             print("")
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb

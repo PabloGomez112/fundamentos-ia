@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from config import CELLS_ROW_SIZE, CELLS_COLUMN_SIZE, WINDOW_WIDTH, WINDOW_HEIGHT
 
 CELL_W = WINDOW_WIDTH  // CELLS_COLUMN_SIZE
@@ -20,7 +19,7 @@ def get_pixels_from_coordinates(row, col, center=True, one_based=True):
         x += CELL_W // 2
         y += CELL_H // 2
     return x, y
-=======
+
 from config import *
 
 def get_pixels_from_coordinates(row, col):
@@ -33,5 +32,4 @@ def get_pixels_from_coordinates(row, col):
     if 0 < row <= CELLS_ROW_SIZE:
         if 0 < col <= CELLS_COLUMN_SIZE:
             return (COLS_PADDING * col), (ROWS_PADDING * row)
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
 

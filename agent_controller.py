@@ -10,19 +10,19 @@ class AgentController:
         self.map_instance = map_instance
         self.agent_x = 1
         self.agent_y = 1
-<<<<<<< HEAD
+
         self.movement_count=0;
-=======
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
+
+
 
     def update(self):
         f = random.choice([self.move_agent_left, self.move_agent_down, self.move_agent_right,
                           self.move_agent_up])
-<<<<<<< HEAD
-        self.movement_count+=1
-=======
 
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
+        self.movement_count+=1
+
+
+
         f()
 
         pass
@@ -76,9 +76,5 @@ class AgentController:
         return can_move
 
     def get_agent_position(self):
-<<<<<<< HEAD
-        return self.agent_x, self.agent_y
-=======
-        return self.agent_x, self.agent_y
 
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
+        return self.agent_x, self.agent_y

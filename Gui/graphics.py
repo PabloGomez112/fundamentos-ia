@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gui/graphics.py
 import os
 import pygame
@@ -64,7 +63,6 @@ class App:
         self.garbage_image_scaled = pygame.transform.smoothscale(
             self.garbage_image, (self.cols_spacing, self.rows_spacing)
         )
-=======
 import pygame
 from logic import map
 from Gui.utils import get_pixels_from_coordinates
@@ -97,7 +95,6 @@ class App:
         pygame.init()
         self._display_surf = pygame.display.set_mode(self.size, pygame.HWSURFACE | pygame.DOUBLEBUF)
         self._running = True
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
         return True
 
     def on_event(self, event):
@@ -111,41 +108,28 @@ class App:
         self._draw_background(self.background_color)
         self._draw_grid()
         self._draw_map()
-<<<<<<< HEAD
-
-        # segun tu controlador: devuelve (col, row)
-=======
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
         col, row = self.agent_controller.get_agent_position()
         self._draw_agent(row, col)
 
         pygame.display.flip()
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
     def on_cleanup(self):
         pygame.quit()
 
     def on_execute(self):
         if not self.on_init():
-<<<<<<< HEAD
             self._running = False
 
         clock = pygame.time.Clock()
-=======
-                self._running = False
-
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
         while self._running:
             for event in pygame.event.get():
                 self.on_event(event)
             self.on_loop()
             self.on_render()
-<<<<<<< HEAD
-            clock.tick(30)  # FPS
+
         self.on_cleanup()
+
+
 
     # dibujo -------------------------------------------------------------------
 
@@ -184,9 +168,8 @@ class App:
         rect = self.robot_image_scaled.get_rect(center=(px, py))
         self._display_surf.blit(self.robot_image_scaled, rect.topleft)
 
-    # util ---------------------------------------------------------------------
-=======
-            pygame.time.wait(200)
+
+        pygame.time.wait(200)
         self.on_cleanup()
 
     def draw_garbage(self, row, col, cell_content):
@@ -205,18 +188,17 @@ class App:
         self._display_surf.blit(self.garbage_image_scaled, (image_rect.x + pixel_x, image_rect.y + pixel_y))
 
 
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
 
     def set_background_color(self, color: tuple):
         self.background_color = color
 
-<<<<<<< HEAD
+
     def set_grid_size(self, rows, cols):
         self.rows = rows
         self.cols = cols
         self.rows_spacing = self.height // self.rows
         self.cols_spacing = self.width  // self.cols
-=======
+
     def _draw_background(self, color):
         """
         :param color:
@@ -257,4 +239,3 @@ class App:
                                  (0, 0, 0),
                                  (0, self.cols_spacing * j),
                                  (self.width, self.cols_spacing * j), 2)
->>>>>>> 5e9092c5f9014c8d2ba8776bc3824ff4159c5deb
