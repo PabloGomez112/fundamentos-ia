@@ -127,7 +127,7 @@ class App:
                 self.on_event(event)
             self.on_loop()
             self.on_render()
-            pygame.time.wait(1000)
+            pygame.time.wait(400)
 
         self.on_cleanup()
 

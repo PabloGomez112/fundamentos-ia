@@ -1,7 +1,3 @@
-import random
-
-import pygame.time
-
 from logic.map import Map
 from config import CELLS_ROW_SIZE, CELLS_COLUMN_SIZE
 
@@ -15,12 +11,7 @@ class AgentController:
 
         self.state = "right"
 
-
-
-
     def update(self):
-        print(self.state)
-        print(self.get_agent_position())
         if not self.is_clean():
             self.clear()
         if self.state == "right":
