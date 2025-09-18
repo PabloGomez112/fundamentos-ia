@@ -102,6 +102,7 @@ class App:
             self._running = False
 
     def on_loop(self):
+
         self.agent_controller.update()
 
     def on_render(self):
@@ -126,6 +127,7 @@ class App:
                 self.on_event(event)
             self.on_loop()
             self.on_render()
+            pygame.time.wait(1000)
 
         self.on_cleanup()
 

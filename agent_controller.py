@@ -13,19 +13,42 @@ class AgentController:
 
         self.movement_count=0;
 
+        self.state = "right"
+
+
 
 
     def update(self):
-        f = random.choice([self.move_agent_left, self.move_agent_down, self.move_agent_right,
-                          self.move_agent_up])
+        print(self.state)
+        print(self.get_agent_position())
+        if not self.is_clean():
+            self.clear()
+        if self.state == "right":
+            self.move_agent_right()
+            if not self._can_move_right():
+                self.state = "down"
+        elif self.state == "left":
+            self.move_agent_left()
+            if not self._can_move_left():
+                self.state = "down"
+        elif self.state == "down" and self._can_move_down():
+            self.move_agent_down()
 
-        self.movement_count+=1
+            if self._can_move_left():
+                self.state = "left"
+            elif self._can_move_right():
+                self.state = "right"
+            else:
+                pass
 
 
 
-        f()
 
         pass
+
+    def clear(self):
+        self.map_instance.set_value_of_cell(self.agent_y-1, self.agent_x-1, 0)
+
 
     def move_agent_left(self):
         if self._can_move_left():
@@ -36,12 +59,12 @@ class AgentController:
             self.agent_x += 1
 
     def move_agent_up(self):
-        if self._can_move_down():
-            self.agent_y += 1
-
-    def move_agent_down(self):
         if self._can_move_up():
             self.agent_y -= 1
+
+    def move_agent_down(self):
+        if self._can_move_down():
+            self.agent_y += 1
 
     def _can_move_right(self):
         if self.agent_x + 1 <= CELLS_COLUMN_SIZE:
@@ -78,3 +101,8 @@ class AgentController:
     def get_agent_position(self):
 
         return self.agent_x, self.agent_y
+
+    def is_clean(self):
+        value = self.map_instance.get_cell(self.agent_y,self.agent_x)
+        return value == 0
+

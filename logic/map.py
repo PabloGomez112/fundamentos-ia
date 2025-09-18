@@ -14,6 +14,9 @@ class Map:
         self.generate_map()
         # self.print_map()
 
+    def set_value_of_cell(self, row, col, value):
+        self.map_instance[row][col]  = value
+
     def generate_map(self):
         for r in range(self.rows):
             for c in range(self.cols):
