@@ -9,7 +9,6 @@ if __name__ == "__main__":
                             rows_padding=ROWS_PADDING,
                             cols_padding=COLS_PADDING)
 
-
     agent_controller = AgentController(map_instance=main_map)
 
     main_environment = game_graphic_engine.App(rows=CELLS_ROW_SIZE,
